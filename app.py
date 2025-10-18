@@ -34,7 +34,7 @@ st.markdown("""
         .sub-title {
             text-align: center;
             font-size: 1.1rem;
-            color: #f1f1f1;
+            color: black;
             margin-bottom: 2rem;
         }
         .stButton button {
@@ -120,15 +120,20 @@ with col_img:
 
 with col_about:
     st.markdown("""
-    <div style='background-color:white; color:black; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.3);'>
-        <h3 style='color:#FF8C00;'>📘 About This App</h3>
-        <p style='font-size:1rem;'>
-        This interactive web app predicts <b>car prices</b> using a trained <b>Machine Learning model</b>.<br><br>
-        Enter your car details in the sidebar to get an accurate price estimate.  
-        This project demonstrates <b>model deployment</b> using Streamlit.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+<div style='text-align:center; font-size:1rem; color:#f2f2f2; line-height:1.7; background:rgba(255,255,255,0.05); padding:20px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.3); max-width:650px; margin:auto;'>
+    <p>
+        This interactive web app predicts <b style='color:#FFD700;'>car prices</b> using a trained 
+        <b style='color:#FFD700;'>Machine Learning model</b>. <br><br>
+        Enter your car details in the sidebar to get an accurate market price estimate instantly.  
+        The model considers important features such as <b>brand, fuel type, transmission, car age,</b> 
+        and <b>driven kilometers</b> to generate reliable results. <br><br>
+        This project demonstrates a full <b style='color:#FFD700;'>end-to-end ML workflow</b> — 
+        from <b>data preprocessing</b> and <b>model training</b> to 
+        <b>real-time prediction deployment</b> using Streamlit.
+    </p>
+</div>
+""", unsafe_allow_html=True)
+
 
 # -----------------------------
 # Prediction Section
