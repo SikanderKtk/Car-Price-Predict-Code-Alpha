@@ -128,7 +128,7 @@ with col_about:
         The model considers important features such as <b>brand, fuel type, transmission, car age,</b> 
         and <b>driven kilometers</b> to generate reliable results. <br><br>
         This project demonstrates a full <b style='color:#FFD700;'>end-to-end ML workflow</b> — 
-        from <b>data preprocessing</b> and <b>model training</b> to 
+        from <b>data preprocessing</b> to 
         <b>real-time prediction deployment</b> using Streamlit.
     </p>
 </div>
