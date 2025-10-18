@@ -51,21 +51,12 @@ st.markdown("""
             transform: scale(1.07);
             background: linear-gradient(90deg, #FF8C00, #FFD700);
         }
-        .css-1d391kg, .css-18e3th9 {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
         .stSidebar {
             background: linear-gradient(180deg, #0A1F44, #004C99);
             color: white;
         }
         .stSidebar select, .stSidebar input {
             color: black !important;
-        }
-        .css-10trblm {
-            color: #FFD700 !important;
         }
         footer {visibility: hidden;}
     </style>
@@ -75,24 +66,17 @@ st.markdown("""
 # Header Section
 # -----------------------------
 st.markdown("<h1 class='main-title'>🚗 CAR PRICE PREDICTION</h1>", unsafe_allow_html=True)
-st.markdown("<p class='sub-title'>Estimate your car’s market value instantly Based on your Car features</p>", unsafe_allow_html=True)
+st.markdown("<p class='sub-title'>Estimate your car’s market value instantly based on your car features</p>", unsafe_allow_html=True)
 
 # -----------------------------
-# Load Trained Model
+# Load Model
 # -----------------------------
 MODEL_PATH = "best_car_price_model.pkl"
-
 if not os.path.exists(MODEL_PATH):
     st.error("❌ Model file not found! Make sure 'best_car_price_model.pkl' exists in the same folder.")
     st.stop()
 
 model = joblib.load(MODEL_PATH)
-
-# -----------------------------
-# Optional Image
-# -----------------------------
-if os.path.exists("car.png"):
-    st.image("car.png", width=300, use_container_width=False)
 
 # -----------------------------
 # Sidebar Input Section
@@ -125,6 +109,28 @@ input_data = pd.DataFrame({
 })
 
 # -----------------------------
+# Image and About Section (Side-by-side)
+# -----------------------------
+st.markdown("---")
+col_img, col_about = st.columns([1, 1])
+
+with col_img:
+    if os.path.exists("car.png"):
+        st.image("car.png", caption="Your Dream Car", use_container_width=True)
+
+with col_about:
+    st.markdown("""
+    <div style='background-color:white; color:black; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.3);'>
+        <h3 style='color:#FF8C00;'>📘 About This App</h3>
+        <p style='font-size:1rem;'>
+        This interactive web app predicts <b>car prices</b> using a trained <b>Machine Learning model</b>.<br><br>
+        Enter your car details in the sidebar to get an accurate price estimate.  
+        This project demonstrates <b>model deployment</b> using Streamlit.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# -----------------------------
 # Prediction Section
 # -----------------------------
 st.markdown("---")
@@ -142,17 +148,7 @@ with col2:
             st.error(f"⚠️ Prediction failed: {e}")
 
 # -----------------------------
-# About Section
+# Footer
 # -----------------------------
 st.markdown("---")
-st.markdown("""
-<div style='text-align:center;'>
-    <h3 style='color:#FFD700;'>📘 About This App</h3>
-    <p style='color:#f2f2f2; font-size:1rem;'>
-    This interactive web app predicts car prices using a trained Machine Learning model.  
-    Enter your car details in the sidebar to get an accurate price estimate.
-    </p>
-</div>
-""", unsafe_allow_html=True)
-
-st.caption("👨‍💻 Developed by Sikander Ktk| Powered by Streamlit & Scikit-learn")
+st.caption("👨‍💻 Developed by **Sikander Ktk** | Powered by **Streamlit & Scikit-learn**")
