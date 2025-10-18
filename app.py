@@ -121,7 +121,7 @@ with col_img:
 with col_about:
     st.markdown("""
 <div style='text-align:center; font-size:1rem; color:#f2f2f2; line-height:1.7; background:rgba(255,255,255,0.05); padding:20px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.3); max-width:650px; margin:auto;'>
-    <p>
+    <p style = 'color = black'>
         This interactive web app predicts <b style='color:#FFD700;'>car prices</b> using a trained 
         <b style='color:#FFD700;'>Machine Learning model</b>. <br><br>
         Enter your car details in the sidebar to get an accurate market price estimate instantly.  
